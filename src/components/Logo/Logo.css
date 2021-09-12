@@ -1,0 +1,8 @@
+.Tilt {
+    background: linear-gradient(to left, #c9c9c9, #FFFFFF);
+    cursor: pointer;
+}
+
+.index {
+    z-index: 150;
+}

@@ -1,0 +1,13 @@
+.form {
+    width: 700px;
+}
+
+.back {
+    background: linear-gradient(to left, #c9c9c9, #FFFFFF);
+    z-index: 100;
+}
+
+button {
+    background: linear-gradient(to left, #0F2027, #203A43, #2C5364);
+    border-radius: 3px;
+}
