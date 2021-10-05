@@ -76,6 +76,8 @@ class App extends Component {
   }
 
   calculateFaceLocation = (data) => {
+    console.log(data);
+
     const regions = data.outputs[0].data.regions;
     const image = document.getElementById('inputimage');
     const width = Number(image.width);
@@ -97,7 +99,7 @@ class App extends Component {
   onDetect = () => {
     if (this.state.input.length) {
       this.setState({ imageUrl: this.state.input });
-      fetch('http://localhost:3000/imageurl', {
+      fetch(`http://${ process.env.REACT_APP_API }/imageurl`, {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -107,7 +109,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
           if (response) {
-            fetch('http://localhost:3000/image', {
+            fetch(`http://${ process.env.REACT_APP_API }/image`, {
               method: 'put',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({'id': this.state.user.id})
